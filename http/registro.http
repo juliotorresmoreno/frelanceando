@@ -1,0 +1,22 @@
+
+
+POST http://freelance-api.e-me.co/api/front/v1/users
+Accept: application/json
+Content-Type: application/json
+
+{
+    "firstname": "officiis",
+    "lastname": "officiis",
+    "password": "officiis",
+    "password_confirmation": "officiis",
+    "email": "acormier@example.org",
+    "active": 1,
+    "phone":"officiis",
+    "time_zone":"officiis",
+    "postal_code":"officiis",
+    "group_id": 1
+}
+
+
+###
+POST http://freelance-api.e-me.co/api/front/v1/users

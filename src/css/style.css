@@ -1,0 +1,119 @@
+.row {
+  margin-right: 0
+}
+
+.explore .title {
+  font-size: 50px;
+  color: white; 
+  font-weight: bold;
+  line-height: 50px;
+  width: 240px;
+  margin-left: 15px
+}
+
+.explore .subtitle {
+  font-size: 20.5px;
+  color: white;
+  line-height: 25px;
+  margin-top: 25px;
+  width: 320px;
+  margin-left: 15px
+}
+
+.explore .container {
+  margin-top: 70px;
+  position: absolute;
+  width: 100%;
+}
+
+.explore button {
+  width: 160px;
+  height: 40px;
+  border-radius: 20px;
+  background: #ffbe4b;
+  color: white;
+  margin-left: 15px;
+  margin-top: 30px;
+}
+
+@media (max-width: 1250px) {
+  .explore .title {
+    font-size: 35px;
+    line-height: 35px
+  }
+  .explore .subtitle {
+    font-size: 15px;
+    line-height: 15px
+  }
+  .explore button {
+    height: 30px
+  }
+  .banner .title {
+    font-size: 50px;
+    line-height: 45px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .explore .container {
+    margin-top: 50px;
+    margin-left: 30px
+  }
+}
+
+@media (max-width: 950px) {
+  .explore button {
+    margin-top: 10px
+  }
+  .explore .subtitle {
+    margin-top: 10px;
+  }
+}
+
+.banner .header {
+  position: absolute;
+  top: 41.5%;
+  left: 13.7%;
+  min-width: 767px;
+}
+
+.banner .title {
+  color: white;
+  font-size: 60px;
+  line-height: 55px;
+  width: 250px;
+  text-align: justify;
+  font-weight: bold
+}
+
+nav.bg-dark {
+  background-color: rgba(0, 0, 0, 0) !important;
+  width: 100%;
+  height: 120px;
+}
+
+nav .navbar-brand {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+nav {
+  z-index: 100;
+}
+
+.nav-item {
+  padding: 0 10px
+}
+
+nav .navbar-nav {
+  background-color: #13bedf;
+}
+
+.modal-header {
+  background-color: #13bedf;
+  color: white
+}
+
+.modal-header .close span {
+  color: white
+}
