@@ -105,7 +105,7 @@ nav {
   padding: 0 10px
 }
 
-nav .navbar-nav {
+nav.navbar-dark .navbar-nav {
   background-color: #13bedf;
 }
 
@@ -116,4 +116,9 @@ nav .navbar-nav {
 
 .modal-header .close span {
   color: white
+}
+
+.nav-tabs active {
+  border-bottom-color: rgb(222, 226, 230);
+
 }

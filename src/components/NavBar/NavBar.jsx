@@ -25,13 +25,15 @@ export default class _ extends React.Component {
         });
     }*/
     render() {
-        //const register = this.state.register;
         //const toggleRegister = this.handleToggleRegister;
         return (
-            <div style={{ position: 'absolute', width: '100%' }}>
+            <div style={{ width: '100%', boxShadow: '0px 5px 20px #dcdcde', marginBottom: 7 }}>
                 <Container>
-                    <Navbar color='dark' dark expand="md">
-                        <NavbarBrand href="/">Freelance</NavbarBrand>
+                    <Navbar expand="md">
+                        <NavbarBrand href="/">
+                            <span style={{ color: '#13bedf' }}>Free</span>
+                            <span style={{ color: '#707070' }}>lance</span>
+                        </NavbarBrand>
                         <NavbarToggler onClick={this.toggle} />
                         <Collapse isOpen={this.state.isOpen} navbar>
                             <Nav className="ml-auto" navbar>
@@ -45,14 +47,14 @@ export default class _ extends React.Component {
                                 <NavItem style={{ marginRight: 20 }}>
                                     <Link
                                         className="nav-link" to="/freelancers"
-                                        style={{ color: 'white' }}>
+                                        style={{ color: '#707070' }}>
                                         Freelancers
                                     </Link>
                                 </NavItem>
                                 <NavItem style={{ marginRight: 20 }}>
                                     <Link
                                         className="nav-link" to="/works"
-                                        style={{ color: 'white' }}>
+                                        style={{ color: '#707070' }}>
                                         Trabajos
                                     </Link>
                                 </NavItem>
@@ -61,7 +63,7 @@ export default class _ extends React.Component {
                                 <NavItem style={{ marginRight: 20 }}>
                                     <Link
                                         className="nav-link" to="/sign-in"
-                                        style={{ color: 'white' }}>
+                                        style={{ color: '#707070' }}>
                                         Ingresar
                                     </Link>
                                 </NavItem>

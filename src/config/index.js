@@ -4,7 +4,7 @@ const config = {
     hostname: 'freelance-api.e-me.co',
     protocol: "http",
     port: "80",
-    api: "/api/front/v1"
+    api: "/api"
 };
 
 export const api = `${config.protocol}://${config.hostname}:${config.port}${config.api}`;

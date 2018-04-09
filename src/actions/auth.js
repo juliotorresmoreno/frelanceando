@@ -4,63 +4,9 @@ import { api } from '../config';
 import { request } from '../util/request';
 
 export const actionsCreators = {
-    password: (data) => (dispatchEvent, getState) => {
+    registerUser: (data) => (dispatchEvent) => {
         return request({
-            url: `${api}/auth/password_change`,
-            method: "POST",
-            data: data,
-            callback: function (data) {
-                if (!data.success) return;
-                dispatchEvent(({
-                    type: actionsTypes.authPassword
-                }));
-            },
-            token: getState().auth.session.token
-        });
-    },
-    recovery: (data) => (dispatchEvent) => {
-        return request({
-            url: `${api}/auth/recovery`,
-            method: "POST",
-            data: data,
-            callback: function (data) {
-                if (!data.success) return;
-                dispatchEvent(({
-                    type: actionsTypes.authRecovery
-                }));
-            }
-        });
-    },
-    session: () => (dispatchEvent) => {
-        const token = window.localStorage.getItem("token");
-        return request({
-            url: `${api}/auth/session`,
-            method: "GET",
-            callback: function (data) {
-                if (!data.success) {
-                    dispatchEvent(({
-                        type: actionsTypes.authSetSession,
-                        session: null
-                    }));
-                    return;
-                }
-                dispatchEvent(({
-                    type: actionsTypes.authSetSession,
-                    session: data.session
-                }));
-            },
-            failure: function() {
-                dispatchEvent(({
-                    type: actionsTypes.authSetSession,
-                    session: null
-                }));
-            },
-            token: token
-        });
-    },
-    login: (data) => (dispatchEvent) => {
-        return request({
-            url: `${api}/auth/login`,
+            url: `${api}/front/v1/users`,
             method: "POST",
             data: data,
             callback: function (data) {
@@ -72,7 +18,6 @@ export const actionsCreators = {
                     type: actionsTypes.authSetSession,
                     session: data.session
                 }));
-                window.localStorage.setItem("token", data.session.token);
             }
         });
     },
@@ -90,16 +35,6 @@ export const actionsCreators = {
                     type: actionsTypes.authSetSession,
                     session: data.session
                 }));
-            }
-        });
-    },
-    logout: () => (dispatchEvent) => {
-        return request({
-            url: `${api}/auth/logout`,
-            method: "GET",
-            callback: function () {
-                window.localStorage.clear();
-                window.location.reload();
             }
         });
     },
