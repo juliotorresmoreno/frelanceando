@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import {
     Collapse, Navbar,
     NavbarToggler,
+    NavbarBrand,
     Nav, NavItem,
     Container
 } from 'reactstrap';
+//import Registro from '../Registro'
 
 export default class _ extends React.Component {
     state = {
@@ -17,15 +19,21 @@ export default class _ extends React.Component {
             isOpen: !this.state.isOpen
         });
     }
+    /*handleToggleRegister = () => {
+        this.setState({
+            register: !this.state.register
+        });
+    }*/
     render() {
+        //const toggleRegister = this.handleToggleRegister;
         return (
             <div style={{ width: '100%', boxShadow: '0px 5px 20px #dcdcde', marginBottom: 7 }}>
                 <Container>
                     <Navbar expand="md">
-                        <Link className="navbar-brand" to="/">
+                        <NavbarBrand href="/">
                             <span style={{ color: '#13bedf' }}>Free</span>
                             <span style={{ color: '#707070' }}>lance</span>
-                        </Link>
+                        </NavbarBrand>
                         <NavbarToggler onClick={this.toggle} />
                         <Collapse isOpen={this.state.isOpen} navbar>
                             <Nav className="ml-auto" navbar>

@@ -1,7 +1,8 @@
 
 
 import React from 'react';
-import { Row, Col, Container } from 'reactstrap';
+import { Container } from 'reactstrap';
+import { Row, Col } from 'antd';
 
 const servicios = [
     {
@@ -45,7 +46,7 @@ export default class _ extends React.PureComponent {
                 <Container style={{ padding: '40px 0' }}>
                     <Row>
                         {servicios.map((value, index) => (
-                            <Col key={index} >
+                            <Col span={4} key={index} >
                                 <div style={{ margin: '20px 0', textAlign: 'center' }}>
                                     <img alt='' style={{ width: 120 }} src={value.url} />
                                     <div style={{ fontSize: 14, color: '#868686' }}>

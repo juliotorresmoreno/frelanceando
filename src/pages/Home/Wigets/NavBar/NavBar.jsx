@@ -1,89 +1,88 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import {
-    Collapse, Navbar,
-    NavbarToggler,
-    NavbarBrand,
-    Nav, NavItem,
-    Container
-} from 'reactstrap';
-//import Registro from '../Registro'
+import { Menu, Layout, Row, Col } from 'antd';
+import { Link, withRouter } from 'react-router-dom';
+import './index.css';
 
-export default class _ extends React.Component {
+const menus = [
+    { key: "categorias", name: "Categorias" },
+    { key: "freelancers", name: "Freelancers" },
+    { key: "trabajos", name: "Trabajos" },
+    { key: "ingresar", name: "Ingresar" }
+];
+
+class _ extends React.Component {
     state = {
-        isOpen: false,
-        register: false
+        current: 'mail',
     }
-    toggle = () => {
-        this.setState({
-            isOpen: !this.state.isOpen
-        });
+    handleClick = (e) => {
+        if (e.key === 'registrarse') {
+            this.props.history.push("/sign-up");
+        } else {
+            this.props.history.push(`/${e.key}`);
+        }
     }
-    /*handleToggleRegister = () => {
-        this.setState({
-            register: !this.state.register
-        });
-    }*/
     render() {
-        //const register = this.state.register;
-        //const toggleRegister = this.handleToggleRegister;
         return (
-            <div style={{ position: 'absolute', width: '100%' }}>
-                <Container>
-                    <Navbar color='dark' dark expand="md">
-                        <NavbarBrand href="/">Freelance</NavbarBrand>
-                        <NavbarToggler onClick={this.toggle} />
-                        <Collapse isOpen={this.state.isOpen} navbar>
-                            <Nav className="ml-auto" navbar>
-                                <NavItem style={{ marginRight: 20 }}>
-                                    <Link
-                                        className="nav-link" to="/categories"
-                                        style={{ color: 'white' }}>
-                                        Categorias
-                                    </Link>
-                                </NavItem>
-                                <NavItem style={{ marginRight: 20 }}>
-                                    <Link
-                                        className="nav-link" to="/freelancers"
-                                        style={{ color: 'white' }}>
-                                        Freelancers
-                                    </Link>
-                                </NavItem>
-                                <NavItem style={{ marginRight: 20 }}>
-                                    <Link
-                                        className="nav-link" to="/works"
-                                        style={{ color: 'white' }}>
-                                        Trabajos
-                                    </Link>
-                                </NavItem>
-                            </Nav>
-                            <Nav className='ml-right' navbar>
-                                <NavItem style={{ marginRight: 20 }}>
-                                    <Link
-                                        className="nav-link" to="/sign-in"
-                                        style={{ color: 'white' }}>
-                                        Ingresar
-                                    </Link>
-                                </NavItem>
-                                <NavItem>
-                                    <Link
-                                        className="nav-link" to="/sign-up"
-                                        onClick={this.handleToggleRegister}
-                                        style={{
-                                            borderRadius: 20, width: 150,
-                                            backgroundColor: '#ffbe4b',
-                                            textAlign: 'center',
-                                            color: 'white'
-                                        }}>
-                                        Registrarse
-                                    </Link>
-                                </NavItem>
-                            </Nav>
-                        </Collapse>
-                    </Navbar>
-                </Container>
-                {/*<Registro open={register} toggle={toggleRegister} />*/}
-            </div >
+            <Layout.Header style={{
+                position: 'fixed',
+                backgroundColor: 'rgba(0,0,0,0)',
+                width: '100%', height: 80,
+                zIndex: 100
+            }}>
+                <Row>
+                    <Col md={{ span: 4, offset: 2 }} style={{ height: 80 }}>
+                        <Link
+                            to="/"
+                            style={{
+                                fontSize: 36,
+                                color: 'white',
+                                fontWeight: 'bold',
+                                textDecoration: 'none',
+                                marginTop: 10
+                            }}>
+                            Freelance
+                        </Link>
+                    </Col>
+                    <Col md={{ span: 14, offset: 2 }} style={{ height: 80 }}>
+                        <Menu
+                            onClick={this.handleClick}
+                            selectedKeys={[this.state.current]}
+                            mode="horizontal"
+                            style={{
+                                backgroundColor: 'rgba(0,0,0,0)',
+                                float: 'right', border: 0
+                            }}
+                        >
+                            {menus.map((value) => (
+                                <Menu.Item
+                                    key={value.key}
+                                    style={{
+                                        fontSize: '1rem',
+                                        color: 'white',
+                                        paddingTop: 17
+                                    }}>
+                                    {value.name}
+                                </Menu.Item>
+                            ))}
+                            <Menu.Item
+                                key="registrarse"
+                                
+                                style={{
+                                    marginTop: 21,
+                                    borderRadius: 20, width: 150,
+                                    border: 0,
+                                    backgroundColor: '#ffbe4b',
+                                    textAlign: 'center', color: 'white',
+                                    lineHeight: '35px', height: 35,
+                                }}>
+                                Registrarse
+                            </Menu.Item>
+                        </Menu>
+                    </Col>
+                </Row>
+            </Layout.Header>
         );
     }
-}
+};
+
+export default withRouter(_);

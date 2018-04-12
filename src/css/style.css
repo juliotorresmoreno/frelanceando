@@ -122,3 +122,15 @@ nav.navbar-dark .navbar-nav {
   border-bottom-color: rgb(222, 226, 230);
 
 }
+
+
+.ant-menu-horizontal > .ant-menu-item,
+.ant-menu-horizontal > .ant-menu-item-active,
+.ant-menu-horizontal > .ant-menu-item-active:hover,
+.ant-menu-horizontal > .ant-menu-item-active::after {
+    border-bottom: 0 !important
+}
+
+.ant-form-item-label {
+  line-height: 100%
+}

@@ -1,6 +1,8 @@
 
 
 import React from 'react';
+import { Button } from 'antd';
+const bannerIcon = '/img/banner.png';
 
 export default class _ extends React.PureComponent {
     render() {
@@ -14,28 +16,32 @@ export default class _ extends React.PureComponent {
                         <div style={{ marginBottom: 17 }}>
                             Encuentra soluciones con freelancers
                         </div>
-                        <button style={{
-                            width: 170,
-                            borderRadius: 20,
+                        <Button style={{
+                            width: 170, border: '2px solid white',
+                            borderRadius: 20, cursor: 'pointer',
                             fontWeight: 'bold',
                             height: 43, color: 'white',
-                            background: '#13bedf'
+                            background: '#13bedf',
+                            fontSize: 20
                         }}>
                             Ver tienda
-                        </button>&nbsp;
-                        <button style={{
+                        </Button>
+                        &nbsp;
+                        <Button style={{
                             marginLeft: 20,
                             width: 230,
-                            borderRadius: 20,
+                            borderRadius: 20, cursor: 'pointer',
                             fontWeight: 'bold',
                             height: 43, color: 'white',
-                            background: '#ffbe4b'
+                            background: '#ffbe4b',
+                            border: 0,
+                            fontSize: 20
                         }}>
                             Publicar trabajo
-                        </button>
+                        </Button>
                     </div>
                 </div>
-                <img alt="" src='/img/banner.png' style={{ width: '100%' }} />
+                <img alt="" src={bannerIcon} style={{ width: '100%' }} />
             </div>
         );
     }

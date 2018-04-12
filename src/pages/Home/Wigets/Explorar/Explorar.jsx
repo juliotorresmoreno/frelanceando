@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Row, Col } from 'reactstrap';
+import { Button } from 'antd';
 import './index.css';
 
 export default class _ extends React.PureComponent {
@@ -21,9 +22,9 @@ export default class _ extends React.PureComponent {
                             </div>
                         </Col>
                         <Col md={{ offset: 6, size: 6 }} xs={{ offset: 6, size: 6 }}>
-                            <button>
+                            <Button style={{border: 0, fontSize: 20}}>
                                 Explorar
-                            </button>
+                            </Button>
                         </Col>
                     </Row>
                 </div>

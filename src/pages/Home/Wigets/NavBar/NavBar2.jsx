@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import {
     Collapse, Navbar,
     NavbarToggler,
+    NavbarBrand,
     Nav, NavItem,
     Container
 } from 'reactstrap';
+//import Registro from '../Registro'
 
 export default class _ extends React.Component {
     state = {
@@ -17,15 +19,19 @@ export default class _ extends React.Component {
             isOpen: !this.state.isOpen
         });
     }
+    /*handleToggleRegister = () => {
+        this.setState({
+            register: !this.state.register
+        });
+    }*/
     render() {
+        //const register = this.state.register;
+        //const toggleRegister = this.handleToggleRegister;
         return (
-            <div style={{ width: '100%', boxShadow: '0px 5px 20px #dcdcde', marginBottom: 7 }}>
+            <div style={{ position: 'absolute', width: '100%' }}>
                 <Container>
-                    <Navbar expand="md">
-                        <Link className="navbar-brand" to="/">
-                            <span style={{ color: '#13bedf' }}>Free</span>
-                            <span style={{ color: '#707070' }}>lance</span>
-                        </Link>
+                    <Navbar color='dark' dark expand="md">
+                        <NavbarBrand href="/">Freelance</NavbarBrand>
                         <NavbarToggler onClick={this.toggle} />
                         <Collapse isOpen={this.state.isOpen} navbar>
                             <Nav className="ml-auto" navbar>
@@ -39,14 +45,14 @@ export default class _ extends React.Component {
                                 <NavItem style={{ marginRight: 20 }}>
                                     <Link
                                         className="nav-link" to="/freelancers"
-                                        style={{ color: '#707070' }}>
+                                        style={{ color: 'white' }}>
                                         Freelancers
                                     </Link>
                                 </NavItem>
                                 <NavItem style={{ marginRight: 20 }}>
                                     <Link
                                         className="nav-link" to="/works"
-                                        style={{ color: '#707070' }}>
+                                        style={{ color: 'white' }}>
                                         Trabajos
                                     </Link>
                                 </NavItem>
@@ -55,7 +61,7 @@ export default class _ extends React.Component {
                                 <NavItem style={{ marginRight: 20 }}>
                                     <Link
                                         className="nav-link" to="/sign-in"
-                                        style={{ color: '#707070' }}>
+                                        style={{ color: 'white' }}>
                                         Ingresar
                                     </Link>
                                 </NavItem>

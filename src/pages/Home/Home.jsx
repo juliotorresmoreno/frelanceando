@@ -7,11 +7,11 @@ import NavBar from './Wigets/NavBar';
 import Footer from '../../components/Footer';
 import Banner from '../../components/Banner';
 
-class App extends Component {
+class _ extends Component {
 	render() {
 		return (
 			<div style={{ minWidth: 767 }}>
-            	<NavBar />
+				<NavBar />
 				<Banner />
 				<Servicios />
 				<Explorar />
@@ -22,4 +22,4 @@ class App extends Component {
 	}
 }
 
-export default App;
+export default _;
