@@ -51,31 +51,31 @@ class _ extends Component {
                     <Button
                         type='button'
                         onClick={this.props.toggle(1)}
-                        className={classnames({ active: this.props.activeTab === 1 })}
+                        className={classnames({ active: activeTab === 1 })}
                         style={{
                             width: 150,
                             border: 0, height: 30,
                             boxShadow: '0px 0px 10px #CCC',
-                            color: this.props.activeTab === 1 ? 'white' : '#737373',
-                            background: this.props.activeTab === 1 ? '#13bedf' : 'white'
+                            color: activeTab === 1 ? 'white' : '#737373',
+                            background: activeTab === 1 ? '#13bedf' : 'white'
                         }}>
                         Freelancer
                     </Button>
                     <Button
                         type='button'
                         onClick={this.props.toggle(2)}
-                        className={classnames({ active: this.props.activeTab === 2 })}
+                        className={classnames({ active: activeTab === 2 })}
                         style={{
                             width: 150,
                             border: 0, height: 30,
                             boxShadow: '0px 0px 10px #CCC',
-                            color: this.props.activeTab === 2 ? 'white' : '#737373',
-                            background: this.props.activeTab === 2 ? '#13bedf' : 'white'
+                            color: activeTab === 2 ? 'white' : '#737373',
+                            background: activeTab === 2 ? '#13bedf' : 'white'
                         }}>
                         Contratar
                     </Button>
                 </div>
-                {this.props.activeTab === 1 ?
+                {activeTab === 1 ?
                     <Row>
                         <Col md={{ offset: 3, size: 6 }}>
                             <FormInput
