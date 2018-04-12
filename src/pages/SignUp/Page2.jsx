@@ -48,9 +48,10 @@ class _ extends Component {
                 </Row>
                 <h5 style={{ color: '#13bedf', textAlign: 'center' }}>Deseo</h5>
                 <div style={{ margin: '0 auto 20px', textAlign: 'center' }}>
-                    <button
+                    <Button
                         type='button'
                         onClick={this.props.toggle(1)}
+                        className={classnames({ active: this.props.activeTab === 1 })}
                         style={{
                             width: 150,
                             border: 0, height: 30,
@@ -59,7 +60,7 @@ class _ extends Component {
                             background: this.props.activeTab === 1 ? '#13bedf' : 'white'
                         }}>
                         Freelancer
-                    </button>
+                    </Button>
                     <Button
                         type='button'
                         onClick={this.props.toggle(2)}
